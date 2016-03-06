@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Minimal JS Front-End App Example</title>
+  <script src="src/model/Book.js"></script>
+</head>
+<body>
+<h1>Restaurant List</h1>
+<h2>blablalblla</h2>
+<menu>
+  <li>
+	  <a href="listRest.html">
+	  	<button type="button">All restaurants</button>
+	  </a>
+  </li>
+  <li>
+	  <a href="addRest.html">
+	  	<button type="button">Add restaurant</button>
+	  </a>
+  </li>
+  <li>
+	  <a href="editRest.html">
+	  	<button type="button">Edit a restaurant</button>
+	  </a>
+  </li>
+  <li>
+	  <a href="deleteRest.html">
+	  	<button type="button">Delete a restaurant</button>
+	  </a>
+  </li>
+	<li>
+		<button type="button" onclick="Restaurant.deleteAll()">
+      Remove all restaurants from list
+    </button>
+  </li>
+  <li>
+  	<button type="button" onclick="Restaurant.createTestData()">
+      Create test data
+    </button>
+  </li>
+</menu>
+
+</body>
+</html>
