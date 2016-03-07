@@ -1,6 +1,6 @@
 function Restaurant(info) {
 	this.id = info.id;
-	this.date = info.date;
+	// this.date = info.date;
 	this.name = info.name;
 	this.location = info.location;
 	this.foodItem = info.foodItem;
@@ -62,8 +62,8 @@ Restaurant.prototype.addRest = function(info) {
 // update a restaurant
 Restaurant.prototype.updateRest = function(info) {
 	var restaurant = Restaurant.instances['info.id'];
-	var date = parseInt(info.date);
-	if(restaurant.date !== date) { restaurant.date = date }
+	// var date = parseInt(info.date);
+	// if(restaurant.date !== date) { restaurant.date = date }
 	if(restaurant.name !== info.name) { restaurant.name = info.name; }
 	if(restaurant.location !== info.location) { restaurant.location = info.location; }
 	if(restaurant.foodItem !== info.foodItem) { restaurant.foodItem = info.foodItem; }
@@ -85,4 +85,21 @@ Restaurant.prototype.deleteAll = function() {
 		localStorage['restaurants'] = {};
 	}
 };
-Restaurant.prototype.createTestData = function() {};
+// fake data to test code
+Restaurant.prototype.createTestData = function() {
+	Restaurant.instances['00'] = new Restaurant({id: '00', name: 'Locande Verde', location: 'New York', foodItem: 'truffled beef tartare', note: 'Best Beef tartate'});
+	Restaurant.instances['01'] = new Restaurant({id: '01', name: 'Bottega Louis', location: 'Los Angeles DT', foodItem: 'White chocolate mousse', note: 'Too sweet not worth the wait'});
+	Restaurant.instances['02'] = new Restaurant({id: '02', name: 'Urth Cafe', location: 'Santa Monica', foodItem: 'green tea bulboa and kale salade', note: 
+'best kale salad yet'});
+	Restaurant.prototype.saveAll();
+
+
+}
+
+
+	this.id = info.id;
+	// this.date = info.date;
+	this.name = info.name;
+	this.location = info.location;
+	this.foodItem = info.foodItem;
+	this.note = info.note;
