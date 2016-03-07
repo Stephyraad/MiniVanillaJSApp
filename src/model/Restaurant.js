@@ -1,5 +1,6 @@
 function Restaurant(info) {
 	this.id = info.id;
+	this.date = info.date;
 	this.name = info.name;
 	this.location = info.location;
 	this.foodItem = info.foodItem;
@@ -41,7 +42,7 @@ Restaurant.prototype.loadAll = function() {
 Restaurant.prototype.saveAll = function() {
 	var error = false;
 	try {
-		localStorage['restaurant'] = JSON.stringify(Restaurant.instances);
+		localStorage['restaurants'] = JSON.stringify(Restaurant.instances);
 	} catch(error) {
 		console.log('Error when saving to Local Storage ' + error);
 		error = true;
@@ -52,11 +53,36 @@ Restaurant.prototype.saveAll = function() {
 	}
 };
 
+// add a restaurant
 Restaurant.prototype.addRest = function(info) {
 	Restaurant.instances[info.id] = new Restaurant(info);
 	console.log("Restaurant " + info.name + " with id: "+ info.id + " has been added to the list");
 };
-Restaurant.prototype.updateRest = function() {};
-Restaurant.prototype.deleteRest = function() {};
-Restaurant.prototype.deleteAll = function() {};
+
+// update a restaurant
+Restaurant.prototype.updateRest = function(info) {
+	var restaurant = Restaurant.instances['info.id'];
+	var date = parseInt(info.date);
+	if(restaurant.date !== date) { restaurant.date = date }
+	if(restaurant.name !== info.name) { restaurant.name = info.name; }
+	if(restaurant.location !== info.location) { restaurant.location = info.location; }
+	if(restaurant.foodItem !== info.foodItem) { restaurant.foodItem = info.foodItem; }
+	if(restaurant.note !== info.note) { restaurant.note = info.note; }
+	console.log("Restaurant " + info.name + ", id " + info.id + " has been updated");
+};
+
+//delete a restaurant
+Restaurant.prototype.deleteRest = function(id) {
+	if(Restaurant.instances[id]) {
+		delete  Restaurant.instances[id]
+	} else {
+		console.log("A restaurant with id " + id + "does not exist in the database");
+	}
+};
+// delete all restaurants
+Restaurant.prototype.deleteAll = function() {
+	if(confirm("Are you sure you want to remove all the restaurants from your list?")) {
+		localStorage['restaurants'] = {};
+	}
+};
 Restaurant.prototype.createTestData = function() {};
