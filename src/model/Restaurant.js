@@ -92,14 +92,4 @@ Restaurant.prototype.createTestData = function() {
 	Restaurant.instances['02'] = new Restaurant({id: '02', name: 'Urth Cafe', location: 'Santa Monica', foodItem: 'green tea bulboa and kale salade', note: 
 'best kale salad yet'});
 	Restaurant.prototype.saveAll();
-
-
 }
-
-
-	this.id = info.id;
-	// this.date = info.date;
-	this.name = info.name;
-	this.location = info.location;
-	this.foodItem = info.foodItem;
-	this.note = info.note;
