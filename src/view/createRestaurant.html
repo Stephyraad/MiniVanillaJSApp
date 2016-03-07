@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<title></title>
+	<meta charset="UTF-8" />
+</head>
+<body>
+	<h1>Add a new Restaurant</h1>
+	<form>
+		<label>ID: <input name="id" placeholder="restaurant id"/></label>
+		<label>Name: <input name="name" placeholder="restaurant name"/></label>
+		<label>Location: <input name="location" placeholder="restaurant location"/></label>
+		<label>Food Item Eaten: <input name="foodItem" placeholder="food item "/></label>
+		<label>Note: <input name="note" placeholder="note"/></label>
+		<button type="button" name="save">Save</button>
+	</form>
+	<a href="index.html">return to main menu</a>
+
+<script src="../src/controller/initialize.js" type="text/javascript"></script>
+<script src="../src/model/Restaurant.js" type="text/javascript"></script>
+<script src="../src/controller/createRestaurant.js" type="text/javascript"></script>
+<script type="text/javascript">
+	Window.addEventListener('load', app.controller.setupUserInterface);
+</script>
+</body>
+</html>
