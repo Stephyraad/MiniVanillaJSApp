@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <meta charset="UTF-8" />
+	<title>List All Restaurants</title>
+</head>
+<body>
+<h1>List all restaurants</h1>
+<table id="restaurants">
+	<thead>
+		<tr>
+			<th>ID</th>
+			<th>Name</th>
+			<th>Year</th>
+		</tr>
+	</thead>
+	<tbody></tbody>
+</table>
+<a href="index.html">Back to main menu</a>
+
+<script src="../controller/initialize.js" type="text/javascript"></script>
+<script src="../model/Restaurant.js" type="text/javascript"></script>
+<script src="../controller/listRestaurant.js" type="text/javascript"></script>
+<script type="text/javascript">
+	Window.addEventListener('load', app.controller.setupUserInterface);
+</script>
+</body>
+</html>
